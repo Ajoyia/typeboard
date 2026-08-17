@@ -1,0 +1,59 @@
+:root {
+  --paper: #f6f1e8;
+  --panel: #fffaf3;
+  --ink: #1d1914;
+  --muted: #6f675d;
+  --line: #e4d9c8;
+  --chip: #efe4d2;
+  --accent: #0f766e;
+  --accent-soft: #d9f2ee;
+  --warn: #b45309;
+  --danger: #b42318;
+  --ok: #157f3d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #161310;
+    --panel: #1f1a16;
+    --ink: #f3ece3;
+    --muted: #b3a89a;
+    --line: #3a3229;
+    --chip: #2a241e;
+    --accent: #2dd4bf;
+    --accent-soft: #123833;
+    --warn: #fbbf24;
+    --danger: #f87171;
+    --ok: #4ade80;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Segoe UI', Inter, system-ui, sans-serif;
+  line-height: 1.5;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+#app {
+  min-height: 100vh;
+}

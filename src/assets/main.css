@@ -1,0 +1,108 @@
+@import './base.css';
+
+.page h1 {
+  font-size: 1.7rem;
+  letter-spacing: -0.03em;
+}
+
+.lede {
+  color: var(--muted);
+  margin: 0.35rem 0 1.25rem;
+  max-width: 46rem;
+}
+
+.focus {
+  display: inline-flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.focus span {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  border: 0;
+  border-radius: 0.7rem;
+  padding: 0.5rem 0.85rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+}
+
+.btn.ghost {
+  background: var(--chip);
+  color: var(--ink);
+}
+
+.btn.danger {
+  background: var(--danger);
+  color: white;
+}
+
+.field {
+  display: grid;
+  gap: 0.3rem;
+  flex: 1 1 10rem;
+}
+
+.field span,
+.field .label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  border-radius: 0.65rem;
+  padding: 0.55rem 0.7rem;
+}
+
+.err {
+  color: var(--danger);
+  font-size: 0.75rem;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  background: var(--chip);
+}
+
+.empty {
+  color: var(--muted);
+  padding: 1rem 0;
+}

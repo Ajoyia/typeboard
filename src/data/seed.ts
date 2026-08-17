@@ -1,0 +1,136 @@
+import type { Contact } from '@/types/contact'
+import type { Product } from '@/types/product'
+import type { Task } from '@/types/task'
+
+export const seedTasks: Task[] = [
+  {
+    id: 'task_seed_1',
+    title: 'Type a TaskStatus union',
+    notes: 'Replace string status with todo | doing | done',
+    status: 'doing',
+    priority: 'high',
+    tags: ['typescript', 'unions'],
+    dueDate: '2026-08-20',
+    createdAt: '2026-08-10T09:00:00.000Z',
+  },
+  {
+    id: 'task_seed_2',
+    title: 'Add generic sortBy helper',
+    notes: 'Practice K extends keyof T',
+    status: 'todo',
+    priority: 'medium',
+    tags: ['generics'],
+    dueDate: '2026-08-22',
+    createdAt: '2026-08-11T11:30:00.000Z',
+  },
+  {
+    id: 'task_seed_3',
+    title: 'Narrow Contact by kind',
+    notes: 'Use discriminated unions in the contacts page',
+    status: 'done',
+    priority: 'low',
+    tags: ['narrowing'],
+    dueDate: null,
+    createdAt: '2026-08-08T16:12:00.000Z',
+  },
+]
+
+export const seedContacts: Contact[] = [
+  {
+    id: 'contact_seed_1',
+    kind: 'person',
+    firstName: 'Amina',
+    lastName: 'Rahman',
+    role: 'Frontend engineer',
+    email: 'amina@example.com',
+    favorite: true,
+    createdAt: '2026-08-09T10:00:00.000Z',
+  },
+  {
+    id: 'contact_seed_2',
+    kind: 'person',
+    firstName: 'Leo',
+    lastName: 'Park',
+    role: 'TypeScript mentor',
+    email: 'leo@example.com',
+    favorite: false,
+    createdAt: '2026-08-12T14:20:00.000Z',
+  },
+  {
+    id: 'contact_seed_3',
+    kind: 'company',
+    companyName: 'Northline Labs',
+    industry: 'Developer tools',
+    website: 'https://northline.dev',
+    email: 'hello@northline.dev',
+    favorite: true,
+    createdAt: '2026-08-07T08:45:00.000Z',
+  },
+]
+
+export const seedProducts: Product[] = [
+  {
+    id: 'prod_1',
+    name: 'Compact mechanical keyboard',
+    category: 'keyboard',
+    priceCents: 12900,
+    stock: 8,
+    rating: 4.7,
+  },
+  {
+    id: 'prod_2',
+    name: 'Split ergo keyboard',
+    category: 'keyboard',
+    priceCents: 18900,
+    stock: 3,
+    rating: 4.9,
+  },
+  {
+    id: 'prod_3',
+    name: 'Oak standing desk',
+    category: 'desk',
+    priceCents: 45900,
+    stock: 2,
+    rating: 4.6,
+  },
+  {
+    id: 'prod_4',
+    name: 'Clamp monitor arm',
+    category: 'desk',
+    priceCents: 7900,
+    stock: 14,
+    rating: 4.4,
+  },
+  {
+    id: 'prod_5',
+    name: 'Warm desk lamp',
+    category: 'lighting',
+    priceCents: 5400,
+    stock: 0,
+    rating: 4.2,
+  },
+  {
+    id: 'prod_6',
+    name: 'Bias light strip',
+    category: 'lighting',
+    priceCents: 2900,
+    stock: 21,
+    rating: 4.1,
+  },
+  {
+    id: 'prod_7',
+    name: 'Studio headphones',
+    category: 'audio',
+    priceCents: 21900,
+    stock: 5,
+    rating: 4.8,
+  },
+  {
+    id: 'prod_8',
+    name: 'USB microphone',
+    category: 'audio',
+    priceCents: 9900,
+    stock: 1,
+    rating: 4.3,
+  },
+]

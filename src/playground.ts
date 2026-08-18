@@ -12,29 +12,59 @@ let message: string = 'hello world'
 
 let prices: string[] = ['hello', 'world']
 
+type Roles = 'Admin' | 'User' | 'Guest'
+
 type Person = {
     address: string,
     city: string,
     age: number,
-    isActive: boolean
+    isActive: boolean,
+    role: Roles
 }
 
 const person1: Person = {
     address: '123 Main St',
     city: 'Anytown',
     age: 13,
-    isActive: true
+    isActive: true,
+    role: 'Admin'
 }
 
 let person2: Person = {
     address: '123 Bolevarda',
     city: 'hamilton',
     age: 13,
-    isActive: true
+    isActive: true,
+    role: 'User'
 }
 
-console.log(count)
+type Name = 'AJ' | 'John' | 'Doe'
 
-console.log(person2)
+type NewName = 'Johnny' | 'Downey'
 
-console.log(prices[0] + ' ' + prices[1])
+let name: Name | NewName = 'Downey'
+
+const address: string = '123 Main St'
+
+console.log(address)
+
+console.log(name)
+
+
+function getName(name: string): string{
+    return name
+}
+
+console.log(getName('Micheal'))
+
+function getPerson(person: Person): Person{
+    return person
+}
+
+function voidFunction(person: Person): void{
+    console.log(person)
+}
+
+console.log(getPerson(person2))
+
+voidFunction(person2)

@@ -55,8 +55,6 @@ function getName(name: string): string{
     return name
 }
 
-console.log(getName('Micheal'))
-
 function getPerson(person: Person): Person{
     return person
 }
@@ -66,5 +64,7 @@ function voidFunction(person: Person): void{
 }
 
 console.log(getPerson(person2))
+
+console.log(getName('Micheal'))
 
 voidFunction(person2)

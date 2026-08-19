@@ -124,3 +124,26 @@ function getRoleName(role: Roles): string {
 }
 
 console.log(getRoleName('Admin'))
+
+
+// generic function that takes a value of any type and returns the same type. T means any type.
+function anyType<T>(value: T): T {
+    return value
+}
+
+console.log(anyType('Hello'))
+console.log(anyType(123))
+console.log(anyType(true))
+console.log(anyType({name: 'John', age: 20}))
+console.log(anyType([1, 2, 3]))
+
+// generic function that takes an array of any type and returns an array of the same type. T means any type of array.
+function anyTypeArray<T>(values: T[]): T[] {
+    return values
+}
+
+console.log(anyTypeArray([1, 2, 3]))
+console.log(anyTypeArray(['Hello', 'World']))
+console.log(anyTypeArray([true, false]))
+console.log(anyTypeArray([{name: 'John', age: 20}, {name: 'Jane', age: 21}]))
+

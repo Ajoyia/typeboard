@@ -1,3 +1,4 @@
+import type { Person, Roles } from './types/person'
 // declare a variable with `let` (can be reassigned later) and explicitly type it as string
 let title: string = 'Hello World'
 
@@ -18,18 +19,6 @@ let message: string = 'hello world'
 
 // an array where every item must be a string — `string[]` is the type
 let prices: string[] = ['hello', 'world']
-
-// a union type of literal strings — `role` can ONLY be one of these three exact values
-type Roles = 'Admin' | 'User' | 'Guest'
-
-// an object type (shape/interface) — describes what properties a Person must have and their types
-interface Person {
-    address: string,
-    city: string,
-    age: number,
-    isActive: boolean,
-    role: Roles
-}
 
 // `const` means the variable binding cannot be reassigned — the object itself is typed as Person
 const person1: Person = {
@@ -147,3 +136,40 @@ console.log(anyTypeArray(['Hello', 'World']))
 console.log(anyTypeArray([true, false]))
 console.log(anyTypeArray([{name: 'John', age: 20}, {name: 'Jane', age: 21}]))
 
+// Partial<Person> makes all properties optional
+type PersonUpdate = Partial<Person>
+// Omit<Person, 'role'> removes the role property
+type PersonWithoutRole = Omit<Person, 'role'>
+// Pick<Person, 'address' | 'city' | 'isActive'> picks only the address, city and isActive properties
+type PersonPreview = Pick<Person, 'address' | 'city' | 'isActive'>
+
+let updatePerson: PersonUpdate = { address: '123 Main St', city: 'Anytown' }
+let personWithoutRole: PersonWithoutRole = { address: '123 Main St', city: 'Anytown', age: 13, isActive: true }
+let personPreview: PersonPreview = { address: '123 Main St', city: 'Anytown', isActive: true }
+
+console.log(updatePerson)
+console.log(personWithoutRole)
+console.log(personPreview)
+
+// function that takes a role type and prints the role to the console
+function printRole(role: Roles): void {
+    if (role === "Admin") {
+      console.log("admin")
+    } else if (role === "User") {
+      console.log("user")
+    } else {
+      console.log("guest")
+    }
+  }
+
+  printRole(person1.role)
+  printRole(person2.role)
+
+  // unknown type - can be any type, but cannot be used without type checking
+  let input: unknown = "hello"
+
+  // input.toUpperCase()  // error — uncomment to see it
+  if (typeof input === "string") {
+    console.log(input.toUpperCase())  // ok here
+  }
+  

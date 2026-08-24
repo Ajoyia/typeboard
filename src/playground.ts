@@ -126,6 +126,7 @@ console.log(anyType(true))
 console.log(anyType({name: 'John', age: 20}))
 console.log(anyType([1, 2, 3]))
 
+// T means type parameter. It is a placeholder for a type. any type of array (number, string, boolean, object) can be passed to the function.
 // generic function that takes an array of any type and returns an array of the same type. T means any type of array.
 function anyTypeArray<T>(values: T[]): T[] {
     return values
@@ -173,3 +174,33 @@ function printRole(role: Roles): void {
     console.log(input.toUpperCase())  // ok here
   }
   
+  // readonly property - cannot be changed after initialization
+  type Point = {
+    readonly x: number
+    readonly y: number
+  }
+
+  let point: Point = {
+    x: 10,
+    y: 20
+  }
+
+  console.log(point)
+
+  // point.x = 30 // error — cannot assign to a readonly property
+  // point.y = 40 // error — cannot assign to a readonly property
+  // console.log(point)
+
+  type Pair = [boolean, string] // tuple type - fixed length and type for each element
+
+  let pair: Pair = [true, 'AJ']
+
+  console.log(pair)
+
+  function isString(value: unknown): value is string {
+    return typeof value === 'string'
+  }
+
+  console.log(isString(pair[1])) // 
+  console.log(isString(pair[0]))  // true
+  // console.log(isString(pair[2])) // error — tuple type has only 2 elements

@@ -17,6 +17,7 @@ export function sortBy<T, K extends keyof T>(items: T[], key: K, dir: SortDir = 
   })
 }
 
+// groupBy is a function that groups items by a key.
 export function groupBy<T, K extends string>(items: T[], keyFn: (item: T) => K): Record<K, T[]> {
   return items.reduce(
     (acc, item) => {
